@@ -6,7 +6,8 @@ RUN apk add --update \
         curl \
         vim
 
-COPY hello.py /usr/local/bin
+COPY simple.py /usr/local/bin
+RUN chmod +x /usr/local/bin/simple.py
 
-ENTRYPOINT ["python", "/usr/local/bin/hello.py"]
+ENTRYPOINT ["/usr/local/bin/simple.py"]
 CMD ["/bin/bash"]

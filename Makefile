@@ -7,5 +7,11 @@ build:
 run:
 	docker run $(BUILD_NAME):$(BUILD_TAG)
 
+test:
+	@docker run $(BUILD_NAME):$(BUILD_TAG) \
+		| grep 'This is a simple python script called from a container image.' \
+		&& echo "TEST PASSED! :D"
+
+
 exec:
 	docker exec -it $(BUILD_NAME) bash
