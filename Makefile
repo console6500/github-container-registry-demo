@@ -12,6 +12,10 @@ test:
 		| grep 'This is a simple python script called from a container image.' \
 		&& echo "TEST PASSED! :D"
 
+github:
+	@docker run --rm ghcr.io/console6500/use-github-container-registry:main \
+		| grep 'This is a simple python script called from a container image.' \
+		&& echo "TEST PASSED! :D"
 
 exec:
 	docker exec -it $(BUILD_NAME) bash
