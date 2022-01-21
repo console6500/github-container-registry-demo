@@ -95,6 +95,6 @@ jobs:
     steps:
       - name: Test the image
         run: |
-          docker run ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main | grep 'This is a simple python script called from a container image.' && echo "TEST PASSED! :D"
+          docker run ${{ github.repository }}:main | grep 'This is a simple python script called from a container image.' && echo "TEST PASSED! :D"
       - name: Use as an Action
-        uses: console6500/github-container-registry-demo@v1.0.0
+        uses: ${{ github.repository }}@v1.0.0
