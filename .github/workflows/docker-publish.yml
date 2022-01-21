@@ -97,4 +97,4 @@ jobs:
         run: |
           docker run ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main | grep 'This is a simple python script called from a container image.' && echo "TEST PASSED! :D"
       - name: Use as an Action
-        uses: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@main
+        uses: ${{ github.repository }}@main
